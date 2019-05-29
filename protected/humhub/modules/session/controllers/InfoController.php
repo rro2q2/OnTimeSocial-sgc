@@ -51,11 +51,13 @@ class InfoController extends \humhub\modules\content\components\ContentContainer
 
         if(isset($_POST["tokenID"]) && isset($_POST["pass"]) && isset($_POST["strike"]) && isset($_POST["tokens"])){
             $tokenID = $_POST["tokenID"];
+            //$warning = $_POST["warning"];
             $pass = $_POST["pass"];
             $strike = $_POST["strike"];
             $tokens = $_POST["tokens"];
 
             $tokenModel = Tokens::findOne(['id' => $tokenID]);
+            //$tokenModel->warning = $warning;
             $tokenModel->pass = $pass;
             $tokenModel->strike = $strike;
             $tokenModel->tokens = $tokens;
